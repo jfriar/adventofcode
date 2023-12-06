@@ -22,9 +22,8 @@ with open(input_file) as f:
         total_cards.update([card])
         card_wins = get_card_wins(card)
         # print('card_points:', card_points)
-        if card_wins > 0:
-            for next_card in range(i+1, i+1+card_wins):
-                total_cards.update([cards[next_card]]*total_cards[card])
+        for next_card in range(i+1, i+1+card_wins):
+            total_cards.update([cards[next_card]]*total_cards[card])
 
     print(sum(total_cards.values()))
     #print(sum([num for card, num in total_cards.items()]))
