@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-import collections
 import re
 
 input_file = 'day6_input.txt'
@@ -15,10 +14,6 @@ def parse_input(data):
             max_dist = [int(d) for d in re.findall(r"\d+", line)]
     return race_times, max_dist
 
-with open(input_file) as f:
-    data = [x.strip() for x in f.readlines()]
-
-race_times, max_dist = parse_input(data)
 
 def margin_of_error(race_time, distance):
     set_speed_for_win = []
@@ -29,6 +24,12 @@ def margin_of_error(race_time, distance):
             set_speed_for_win.append(s)
     # print(set_speed_for_win)
     return len(set_speed_for_win)
+
+
+with open(input_file) as f:
+    data = [x.strip() for x in f.readlines()]
+
+race_times, max_dist = parse_input(data)
 
 solve = []
 for i, race_time in enumerate(race_times):

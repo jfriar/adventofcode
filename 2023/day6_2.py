@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-import collections
 import re
 
 input_file = 'day6_input.txt'

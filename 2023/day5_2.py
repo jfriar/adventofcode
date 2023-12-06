@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
-import collections
 import re
 
 input_file = 'day5_input.txt'
-#input_file = 'day5_test.txt'
 
 
 def parse_map_data(data):
