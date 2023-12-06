@@ -17,11 +17,11 @@ def parse_input(data):
 
 def margin_of_error(race_time, distance):
     set_speed_for_win = []
-    for s in range(race_time):
-        r = race_time - s
-        _d = s * r
-        if _d > distance:
-            set_speed_for_win.append(s)
+    for _race_time in range(race_time):
+        speed = race_time - _race_time
+        _distance = _race_time * speed
+        if _distance > distance:
+            set_speed_for_win.append(speed)
     # print(set_speed_for_win)
     return len(set_speed_for_win)
 
@@ -40,3 +40,4 @@ result = 1
 for i in solve:
     result *= i
 print(result)
+print('should be: 505494')
