@@ -47,12 +47,6 @@ PIPE_CONNECTIONS = {'|': {(0, -1): '|7FS',
                           (1, 0):  '-J7'}}
 
 
-def is_pipe(char):
-    if char in PIPES:
-        return True
-    return False
-
-
 def next_relative_pipes(char):
     next_pipes = []
     for _y in [-1, 0, 1]:
