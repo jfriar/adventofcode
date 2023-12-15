@@ -55,15 +55,15 @@ from pprint import pprint
 
 total = 0
 for p in patterns:
-    # y axis
-    y_axis = find_mirror_axis(p)
-
     # x axis
+    x_axis = find_mirror_axis(p)
+
+    # y axis
     transposed = [''.join(z) for z in zip(*p)]
-    x_axis = find_mirror_axis(transposed)
+    y_axis = find_mirror_axis(transposed)
 
     # print('y_axis:', y_axis, 'x_axis:', x_axis)
 
-    total += (y_axis*100) + x_axis
+    total += (x_axis*100) + y_axis
 
 print('total:', total)
