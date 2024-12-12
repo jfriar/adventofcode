@@ -41,14 +41,14 @@ def find_guard_vectors(guard_direction, guard_position, guard_map_obstacles, gua
     current_position = guard_position
     vectors = set()
     while move_resp == 0:
-        prev_vectors = vectors.copy()
+        prev_len = len(vectors)
         vectors.add((current_direction, current_position))
         move_resp, current_direction, current_position = guard_move(current_direction,
                                                                     current_position,
                                                                     guard_map_obstacles,
                                                                     guard_map_x_len,
                                                                     guard_map_y_len)
-        if vectors == prev_vectors:
+        if len(vectors) == prev_len:
             print('>>>loop found<<<')
             move_resp = 2
 
