@@ -6,9 +6,7 @@ input_file = 'day02_input.txt'
 
 def find_repeated_twice(start, end):
     start_int = int(start)
-    start_str = str(start)
     end_int = int(end)
-    end_str = str(end)
     invalid_ids = []
     for _id in range(start_int, end_int+1):
         _id_str = str(_id)

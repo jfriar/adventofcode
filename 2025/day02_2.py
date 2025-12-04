@@ -6,27 +6,29 @@ input_file = 'day02_input.txt'
 
 def find_repeated_x(start, end):
     start_int = int(start)
-    start_str = str(start)
     end_int = int(end)
-    end_str = str(end)
     invalid_ids = []
     for _id in range(start_int, end_int+1):
         _id_str = str(_id)
         _id_len = len(_id_str)
+
+        # if _id_len is 1 or less, continue
         if _id_len <= 1:
             continue
+
         # check if all the ints are the same
-        if len(set(list(map(int, _id_str)))) == 1:
-            # print('invalid:', _id)
+        elif len(set(list(map(int, _id_str)))) == 1:
+            # print(' invalid:', _id)
             invalid_ids.append(_id)
 
-        # if not, check all possible repeat sizes
+        # check all possible repeat sizes
         else:
             for repeat_len in range(2, _id_len):
+                # repeat size is only valid if it evenly divides into _id_len
                 if _id_len % repeat_len == 0:
-                    # print(' check:', repeat_len)
                     # split _id_str by repeat len
                     _id_split = [_id_str[i:i+repeat_len] for i in range(0, len(_id_str), repeat_len)]
+                    # if all the chunks are the same, this id is invalid
                     if len(set(_id_split)) == 1:
                         invalid_ids.append(_id)
                         # print(' invalid:', _id)
