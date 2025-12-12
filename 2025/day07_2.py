@@ -16,8 +16,8 @@ with open(input_file) as f:
             splitter_loc = m.start()
             if splitter_loc in particle_paths.keys():
                 num_particles = particle_paths.pop(splitter_loc)
-                particle_paths[splitter_loc-1]= particle_paths.get(splitter_loc-1, 0) + num_particles
-                particle_paths[splitter_loc+1]= particle_paths.get(splitter_loc+1, 0) + num_particles
+                particle_paths[splitter_loc-1] = particle_paths.get(splitter_loc-1, 0) + num_particles
+                particle_paths[splitter_loc+1] = particle_paths.get(splitter_loc+1, 0) + num_particles
 
             # 'S' is the start
             if line[splitter_loc] == 'S':
